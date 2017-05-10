@@ -1,4 +1,4 @@
-package com.example.siqingchan.techcollect;
+package com.example.siqingchan.trytime;
 
 import org.junit.Test;
 

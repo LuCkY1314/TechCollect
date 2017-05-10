@@ -1,4 +1,4 @@
-package com.example.siqingchan.techcollect;
+package com.example.siqingchan.trytime;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

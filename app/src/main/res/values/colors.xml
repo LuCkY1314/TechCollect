@@ -3,4 +3,29 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="mainTitleColor">#373c40</color>
+    <!--重要级文字，如标题、正文-->
+    <color name="jkjH1GYColor">#333333</color>
+    <!--普通级文字，如正文-->
+    <color name="jkjH2GYColor">#666666</color>
+    <!--辅助、次要文字，如补充信息、发布时间-->
+    <color name="jkjH3GYColor">#999999</color>
+    <!--最次要文字信息，输入框输入前的提示文案-->
+    <color name="jkjH4GYColor">#CCCCCC</color>
+    <!--分割线-->
+    <color name="jkjH5GYColor">#DDDDDD</color>
+    <!--分割线：内容区域大范围使用-->
+    <color name="jkjH6GYColor">#E9E9E9</color>
+    <!--背景色：页面的背景色，白色背景的列表按下的背景色-->
+    <color name="jkjH7GYColor">#1F1F1F</color>
+    <!--背景色：导航背景-->
+    <color name="jkjH8GYColor">#F9F9F9</color>
+    <!--背景色：导航背景-->
+    <color name="jkjWHColor">#FFFFFF</color>
+    <!--小面积使用，特别强调的文字、button和icon-->
+    <color name="jkjOGColor">#FF6600</color>
+    <!--对应FF6600按下的颜色-->
+    <color name="jkjDOColor">#DC5800</color>
+    <!--报错颜色-->
+    <color name="jkjRDColor">#FE3824</color>
 </resources>
