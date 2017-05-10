@@ -1,97 +1,57 @@
 package com.example.siqingchan.trytime.filter.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.siqingchan.trytime.R;
+import com.example.siqingchan.trytime.databinding.ItemFilterDistictMenuAllBinding;
+import com.example.siqingchan.trytime.databinding.ItemFilterDistictMenuBinding;
 import com.example.siqingchan.trytime.filter.data.District;
-import com.example.siqingchan.trytime.filter.listener.OnFilterMenuItemClickListener;
-
-import java.util.List;
-
 
 /**
- * Created by siqingchan on 2017/5/8.
+ * Created by siqingchan on 2017/5/10.
  */
 
-public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.DistrictHolder> {
+public class DistrictAdapter extends AbsExtendFilterAdapter<District.DistrictsBean> {
     private Context context;
-    private List<District.DistrictsBean> list;
-    private OnFilterMenuItemClickListener<District.DistrictsBean> listener;
-    private static int ALL_TYPE = 1, BLOCKS_TYPE = 2;
 
-    public List<District.DistrictsBean> getList() {
-        return list;
-    }
-
-    public void setList(List<District.DistrictsBean> list) {
-        this.list = list;
-    }
-
-    public OnFilterMenuItemClickListener getListener() {
-        return listener;
-    }
-
-    public void setListener(OnFilterMenuItemClickListener listener) {
-        this.listener = listener;
-    }
-
-    public DistrictAdapter(Context context, List<District.DistrictsBean> data) {
-        super();
+    public DistrictAdapter(Context context, int variableId) {
+        super(context, variableId);
         this.context = context;
-        this.list = data;
     }
 
     @Override
-    public DistrictHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view;
-        if (viewType == ALL_TYPE) {
-            view = LayoutInflater.from(context).inflate(R.layout.item_filter_distict_menu_all, parent, false);
+    protected void addOtherListener(ViewDataBinding binding, District.DistrictsBean data, int type) {
+        if (type == HEAD_TYPE) {
+            final ItemFilterDistictMenuAllBinding databinding = (ItemFilterDistictMenuAllBinding) binding;
+            databinding.selectorTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, databinding.selectorTv.getText(), Toast.LENGTH_SHORT).show();
+                }
+            });
         } else {
-            view = LayoutInflater.from(context).inflate(R.layout.item_filter_distict_menu, parent, false);
+            final ItemFilterDistictMenuBinding databinding = (ItemFilterDistictMenuBinding) binding;
+            databinding.selectorTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, databinding.selectorTv.getText(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
-        return new DistrictHolder(view);
     }
 
     @Override
-    public int getItemViewType(int position) {
-        District.DistrictsBean bean = list.get(position);
-        if (bean.getBlocks() == null) {
-            return ALL_TYPE;
+    public ViewDataBinding inflaterView(LayoutInflater layoutInflater, ViewGroup parent, int viewType) {
+        if (viewType == HEAD_TYPE) {
+            return DataBindingUtil.inflate(layoutInflater, R.layout.item_filter_distict_menu_all, parent, false);
         } else {
-            return BLOCKS_TYPE;
-        }
-    }
-
-    @Override
-    public void onBindViewHolder(DistrictHolder holder, final int position) {
-        holder.textView.setText(list.get(position).getName());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onItemClick(list.get(position));
-            }
-        });
-    }
-
-    @Override
-    public int getItemCount() {
-        return list.size();
-    }
-
-    public class DistrictHolder extends RecyclerView.ViewHolder {
-        private TextView textView;
-        private ImageView imageView;
-
-        public DistrictHolder(View itemView) {
-            super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.selector_tv);
-            imageView = (ImageView) itemView.findViewById(R.id.selector_iv);
+            return DataBindingUtil.inflate(layoutInflater, R.layout.item_filter_distict_menu, parent, false);
         }
     }
 }

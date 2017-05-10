@@ -18,7 +18,7 @@ import com.anjuke.android.commonutils.UIUtils;
 import com.example.siqingchan.trytime.BR;
 import com.example.siqingchan.trytime.R;
 import com.example.siqingchan.trytime.filter.adapter.AbsExtendFilterAdapter;
-import com.example.siqingchan.trytime.filter.adapter.FirstAdapter;
+import com.example.siqingchan.trytime.filter.adapter.DistrictAdapter;
 import com.example.siqingchan.trytime.filter.adapter.PriceAdapter;
 import com.example.siqingchan.trytime.filter.adapter.TypeAdapter;
 import com.example.siqingchan.trytime.filter.data.District;
@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements OnFilterMenuItemC
     District district;
     List<String> houseType;
     List<String> housePrice;
+    AbsExtendFilterAdapter adapter, adapter1, adapter2;
+    BaseFilterMenu menu, menu1, menu2;
+    PopupWindow districtWindow, typeWindow, priceWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +52,12 @@ public class MainActivity extends AppCompatActivity implements OnFilterMenuItemC
         initData();
         initListener();
         addFragment();
-       // initView();
+        // initView();
     }
 
     private void initView() {
         RecyclerView list = (RecyclerView) findViewById(R.id.list);
-        FirstAdapter adapter = new FirstAdapter(this, BR.item);
+        DistrictAdapter adapter = new DistrictAdapter(this, BR.item);
         adapter.setData(district.getDistricts());
         list.setLayoutManager(new LinearLayoutManager(this));
         adapter.setListener(this);
@@ -67,28 +70,55 @@ public class MainActivity extends AppCompatActivity implements OnFilterMenuItemC
             public void onTitleClick(View view, String tag) {
                 switch (tag) {
                     case "区域":
-                        FirstAdapter adapter = new FirstAdapter(MainActivity.this, BR.item);
-                        adapter.setData(district.getDistricts());
-                        adapter.setListener(new OnFilterMenuItemClickListener<District.DistrictsBean>() {
-                            @Override
-                            public void onItemClick(District.DistrictsBean districtsBean) {
-                                Toast.makeText(MainActivity.this, districtsBean.getName() + districtsBean.getValue(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        DistrictFilterMenu menu = new DistrictFilterMenu(MainActivity.this, adapter);
-                        showFilterMenu(view, menu, adapter);
+                        if (adapter == null) {
+                            adapter = new DistrictAdapter(MainActivity.this, BR.item);
+                            adapter.setData(district.getDistricts());
+                            adapter.setListener(new OnFilterMenuItemClickListener<District.DistrictsBean>() {
+                                @Override
+                                public void onItemClick(District.DistrictsBean districtsBean) {
+                                    Toast.makeText(MainActivity.this, districtsBean.getName() + districtsBean.getValue(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                        if (menu == null) {
+                            menu = new DistrictFilterMenu(MainActivity.this, adapter);
+                        }
+                        if (districtWindow == null) {
+                            districtWindow = new PopupWindow(WindowManager.LayoutParams.MATCH_PARENT,
+                                    WindowManager.LayoutParams.WRAP_CONTENT);
+                            newFilterMenu(menu, districtWindow);
+                        }
+                        initAndShowFilter(districtWindow, view);
                         break;
                     case "户型":
-                        TypeAdapter adapter1 = new TypeAdapter(MainActivity.this, BR.item);
-                        adapter1.setData(houseType);
-                        NormalFilterMenu menu1 = new NormalFilterMenu(MainActivity.this, adapter1);
-                        showFilterMenu(view, menu1, adapter1);
+                        if (adapter1 == null) {
+                            adapter1 = new TypeAdapter(MainActivity.this, BR.item);
+                            adapter1.setData(houseType);
+                        }
+                        if (menu1 == null) {
+                            menu1 = new NormalFilterMenu(MainActivity.this, adapter1);
+                        }
+                        if (typeWindow == null) {
+                            typeWindow = new PopupWindow(WindowManager.LayoutParams.MATCH_PARENT,
+                                    WindowManager.LayoutParams.WRAP_CONTENT);
+                            newFilterMenu(menu1, typeWindow);
+                        }
+                        initAndShowFilter(typeWindow, view);
                         break;
                     case "价格":
-                        PriceAdapter adapter2 = new PriceAdapter(MainActivity.this, BR.item);
-                        adapter2.setData(housePrice);
-                        NormalFilterMenu menu2 = new NormalFilterMenu(MainActivity.this, adapter2);
-                        showFilterMenu(view, menu2, adapter2);
+                        if (adapter2 == null) {
+                            adapter2 = new PriceAdapter(MainActivity.this, BR.item);
+                            adapter2.setData(housePrice);
+                        }
+                        if (menu2 == null) {
+                            menu2 = new NormalFilterMenu(MainActivity.this, adapter2);
+                        }
+                        if (priceWindow == null) {
+                            priceWindow = new PopupWindow(WindowManager.LayoutParams.MATCH_PARENT,
+                                    WindowManager.LayoutParams.WRAP_CONTENT);
+                            newFilterMenu(menu2, priceWindow);
+                        }
+                        initAndShowFilter(priceWindow, view);
                         break;
                 }
             }
@@ -98,18 +128,28 @@ public class MainActivity extends AppCompatActivity implements OnFilterMenuItemC
     /**
      * 显示filter点击后的菜单
      *
-     * @param accordingView
      * @param filterMenu
-     * @param adapter
      */
-    private void showFilterMenu(View accordingView, BaseFilterMenu filterMenu, AbsExtendFilterAdapter adapter) {
+    private void newFilterMenu(BaseFilterMenu filterMenu, PopupWindow popupWindow) {
         filterMenu.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        PopupWindow popupWindow = new PopupWindow(accordingView, WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.WRAP_CONTENT);
         popupWindow.setContentView(filterMenu);
         popupWindow.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
         popupWindow.setOutsideTouchable(true);
-        popupWindow.showAsDropDown(accordingView);
+
+    }
+
+    /**
+     * 初始化一次popWindow，控制点击同一title的出现和消失逻辑
+     *
+     * @param popupWindow
+     * @param accordingView
+     */
+    public void initAndShowFilter(PopupWindow popupWindow, View accordingView) {
+        if (popupWindow.isShowing()) {
+            popupWindow.dismiss();
+        } else {
+            popupWindow.showAsDropDown(accordingView);
+        }
     }
 
     private void initData() {
