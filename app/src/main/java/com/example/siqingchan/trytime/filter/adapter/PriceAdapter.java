@@ -8,19 +8,17 @@ import android.view.ViewGroup;
 
 import com.example.siqingchan.trytime.R;
 
-
 /**
- * Created by siqingchan on 2017/5/9.
+ * Created by siqingchan on 2017/5/10.
  */
 
-public class TypeAdapter extends AbsExtendFilterAdapter<String> {
+public class PriceAdapter extends AbsExtendFilterAdapter<String> {
     private Context context;
 
-    public TypeAdapter(Context context, int variableId) {
+    public PriceAdapter(Context context, int variableId) {
         super(context, variableId);
         this.context = context;
     }
-
 
     @Override
     protected void addOtherListener(ViewDataBinding binding, String data, int type) {
@@ -30,10 +28,9 @@ public class TypeAdapter extends AbsExtendFilterAdapter<String> {
     @Override
     public ViewDataBinding inflaterView(LayoutInflater layoutInflater, ViewGroup parent, int viewType) {
         if (viewType == HEAD_TYPE) {
-            return DataBindingUtil.inflate(layoutInflater, R.layout.item_filter_type_menu_all, parent, false);
+            return DataBindingUtil.inflate(layoutInflater, R.layout.item_filter_price_menu_all, parent, false);
         } else {
-            return DataBindingUtil.inflate(layoutInflater, R.layout.item_filter_type_menu, parent, false);
+            return DataBindingUtil.inflate(layoutInflater, R.layout.item_filter_type_price_menu, parent, false);
         }
     }
 }
-

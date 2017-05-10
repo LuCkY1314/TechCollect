@@ -3,6 +3,7 @@ package com.example.siqingchan.trytime.filter.adapter;
 import android.content.Context;
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -17,11 +18,12 @@ import java.util.List;
  * 用于普通列表-可以有不同type的item，或有head和foot特别样式的列表
  */
 
-public abstract class ExtendFilterAdapter<T> extends RecyclerView.Adapter<BindingViewHolder> {
+public abstract class AbsExtendFilterAdapter<T> extends RecyclerView.Adapter<BindingViewHolder> {
     private Context context;
     private List<T> data;
     private int variableId;
     private OnFilterMenuItemClickListener<T> listener;
+    private LayoutInflater layoutInflater;
     protected final static int HEAD_TYPE = 1, NORMAL_TYPE = 2;
 
     public List<T> getData() {
@@ -40,15 +42,16 @@ public abstract class ExtendFilterAdapter<T> extends RecyclerView.Adapter<Bindin
         this.listener = listener;
     }
 
-    public ExtendFilterAdapter(Context context, int variableId) {
+    public AbsExtendFilterAdapter(Context context, int variableId) {
         this.context = context;
         this.variableId = variableId;
+        this.layoutInflater = LayoutInflater.from(context);
     }
 
 
     @Override
     public BindingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BindingViewHolder(inflaterView(parent, viewType));
+        return new BindingViewHolder(inflaterView(layoutInflater, parent, viewType));
     }
 
     /**
@@ -73,7 +76,8 @@ public abstract class ExtendFilterAdapter<T> extends RecyclerView.Adapter<Bindin
         holder.getBinding().getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onItemClick(data.get(position));
+                if (listener != null)
+                    listener.onItemClick(data.get(position));
             }
         });
         addOtherListener(holder.getBinding(), t, getItemViewType(position));
@@ -98,5 +102,5 @@ public abstract class ExtendFilterAdapter<T> extends RecyclerView.Adapter<Bindin
      *
      * @return
      */
-    public abstract ViewDataBinding inflaterView(ViewGroup parent, int viewType);
+    public abstract ViewDataBinding inflaterView(LayoutInflater layoutInflater, ViewGroup parent, int viewType);
 }

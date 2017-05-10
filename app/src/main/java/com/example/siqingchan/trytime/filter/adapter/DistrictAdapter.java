@@ -51,9 +51,9 @@ public class DistrictAdapter extends RecyclerView.Adapter<DistrictAdapter.Distri
     public DistrictHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         if (viewType == ALL_TYPE) {
-            view = LayoutInflater.from(context).inflate(R.layout.item_filter_menu_all, parent, false);
+            view = LayoutInflater.from(context).inflate(R.layout.item_filter_distict_menu_all, parent, false);
         } else {
-            view = LayoutInflater.from(context).inflate(R.layout.item_filter_menu, parent, false);
+            view = LayoutInflater.from(context).inflate(R.layout.item_filter_distict_menu, parent, false);
         }
         return new DistrictHolder(view);
     }
