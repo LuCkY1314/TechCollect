@@ -11,13 +11,14 @@ import android.widget.Toast;
 import com.example.siqingchan.trytime.R;
 import com.example.siqingchan.trytime.databinding.ItemFilterDistictMenuAllBinding;
 import com.example.siqingchan.trytime.databinding.ItemFilterDistictMenuBinding;
-import com.example.siqingchan.trytime.filter.data.District;
+import com.example.siqingchan.trytime.filter.data.DistrictData;
 
 /**
  * Created by siqingchan on 2017/5/10.
+ * 区域选择recycleView adapter
  */
 
-public class DistrictAdapter extends AbsExtendFilterAdapter<District.DistrictsBean> {
+public class DistrictAdapter extends AbsExtendFilterAdapter<DistrictData.DistrictsBean> {
     private Context context;
 
     public DistrictAdapter(Context context, int variableId) {
@@ -26,7 +27,7 @@ public class DistrictAdapter extends AbsExtendFilterAdapter<District.DistrictsBe
     }
 
     @Override
-    protected void addOtherListener(ViewDataBinding binding, District.DistrictsBean data, int type) {
+    protected void addOtherListener(ViewDataBinding binding, DistrictData.DistrictsBean data, int type) {
         if (type == HEAD_TYPE) {
             final ItemFilterDistictMenuAllBinding databinding = (ItemFilterDistictMenuAllBinding) binding;
             databinding.selectorTv.setOnClickListener(new View.OnClickListener() {

@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.siqingchan.trytime.R;
+import com.example.siqingchan.trytime.filter.data.PriceData;
 
 /**
  * Created by siqingchan on 2017/5/10.
+ * 价格选择recycleView adapter
  */
 
-public class PriceAdapter extends AbsExtendFilterAdapter<String> {
+public class PriceAdapter extends AbsExtendFilterAdapter<PriceData.NormalBean> {
     private Context context;
 
     public PriceAdapter(Context context, int variableId) {
@@ -21,7 +23,7 @@ public class PriceAdapter extends AbsExtendFilterAdapter<String> {
     }
 
     @Override
-    protected void addOtherListener(ViewDataBinding binding, String data, int type) {
+    protected void addOtherListener(ViewDataBinding binding, PriceData.NormalBean data, int type) {
 
     }
 

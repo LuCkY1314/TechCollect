@@ -69,7 +69,7 @@ public abstract class AbsExtendFilterAdapter<T> extends RecyclerView.Adapter<Bin
     }
 
     @Override
-    public void onBindViewHolder(BindingViewHolder holder, final int position) {
+    public void onBindViewHolder(final BindingViewHolder holder, final int position) {
         T t = data.get(position);
         holder.getBinding().setVariable(variableId, t);
         holder.getBinding().executePendingBindings();
@@ -77,7 +77,7 @@ public abstract class AbsExtendFilterAdapter<T> extends RecyclerView.Adapter<Bin
             @Override
             public void onClick(View v) {
                 if (listener != null)
-                    listener.onItemClick(data.get(position));
+                    listener.onItemClick(data.get(position),holder.getBinding(),getItemViewType(position));
             }
         });
         addOtherListener(holder.getBinding(), t, getItemViewType(position));

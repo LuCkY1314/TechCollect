@@ -5,7 +5,7 @@
 
         <variable
             name="item"
-            type="com.example.siqingchan.trytime.filter.data.District.DistrictsBean"></variable>
+            type="com.example.siqingchan.trytime.filter.data.DistrictData.DistrictsBean"></variable>
     </data>
 
     <RelativeLayout
@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="12dp"
-            android:text="@{item.name}" />
+            android:text="@{item.name}"
+            android:textColor="@drawable/selector_item_text_font" />
 
         <ImageView
             android:id="@+id/selector_iv"

@@ -7,13 +7,15 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.siqingchan.trytime.R;
+import com.example.siqingchan.trytime.filter.data.HouseTypeData;
 
 
 /**
  * Created by siqingchan on 2017/5/9.
+ * 户型选择recycleView adapter
  */
 
-public class TypeAdapter extends AbsExtendFilterAdapter<String> {
+public class TypeAdapter extends AbsExtendFilterAdapter<HouseTypeData.NormalBean> {
     private Context context;
 
     public TypeAdapter(Context context, int variableId) {
@@ -23,7 +25,7 @@ public class TypeAdapter extends AbsExtendFilterAdapter<String> {
 
 
     @Override
-    protected void addOtherListener(ViewDataBinding binding, String data, int type) {
+    protected void addOtherListener(ViewDataBinding binding, HouseTypeData.NormalBean data, int type) {
 
     }
 

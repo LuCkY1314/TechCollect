@@ -8,7 +8,7 @@ import java.util.List;
  * Created by siqingchan on 2017/5/8.
  */
 
-public class District extends BaseData {
+public class DistrictData extends BaseData {
 
     @SerializedName("districts")
     private List<DistrictsBean> districts;
@@ -34,7 +34,15 @@ public class District extends BaseData {
         private int value;
         @SerializedName("blocks")
         private List<BlocksBean> blocks;
+        private boolean select;
 
+        public boolean isSelect() {
+            return select;
+        }
+
+        public void setSelect(boolean select) {
+            this.select = select;
+        }
         public String getName() {
             return name;
         }
@@ -69,6 +77,15 @@ public class District extends BaseData {
             private String name;
             @SerializedName("value")
             private int value;
+            private boolean select;
+
+            public boolean isSelect() {
+                return select;
+            }
+
+            public void setSelect(boolean select) {
+                this.select = select;
+            }
 
             public String getName() {
                 return name;
