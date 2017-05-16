@@ -9,4 +9,5 @@
 .externalNativeBuild
 /commonutils
 /framework/src/main/java/com/example/framework/http/lib/
-/app/src/main/java/com/example/siqingchan/trytime/http/util/
+/app/src/main/java/com/example/siqingchan/trytime/http/util/ApiRule.java
+/app/src/main/java/com/example/siqingchan/trytime/http/util/ApiUtil.java
