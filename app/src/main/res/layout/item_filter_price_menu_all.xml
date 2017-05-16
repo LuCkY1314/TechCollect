@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
+            android:textColor="@drawable/selector_item_text_font"
             android:text="@{item.enumValue}" />
     </LinearLayout>
 </layout>

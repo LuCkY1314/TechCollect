@@ -10,15 +10,30 @@ import android.widget.LinearLayout;
 
 import com.example.siqingchan.trytime.R;
 import com.example.siqingchan.trytime.filter.adapter.AbsExtendFilterAdapter;
+import com.example.siqingchan.trytime.filter.listener.OnFilterSelectedListener;
+import com.example.siqingchan.trytime.filter.listener.OnFilterTitleClick;
+
+import java.util.List;
 
 /**
  * Created by siqingchan on 2017/5/8.
  */
 
 public class BaseFilterMenu<T> extends LinearLayout {
+    private AbsExtendFilterAdapter adapter;
+    private OnFilterSelectedListener listener;
+
+    public OnFilterSelectedListener getListener() {
+        return listener;
+    }
+
+    public void setListener(OnFilterSelectedListener listener) {
+        this.listener = listener;
+    }
 
     public BaseFilterMenu(final Context context, AbsExtendFilterAdapter<T> adapter) {
         super(context);
+        this.adapter = adapter;
         View view = LayoutInflater.from(context).inflate(R.layout.filter_extend_view, null);
         RecyclerView list = (RecyclerView) view.findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(context, VERTICAL, false));
@@ -38,4 +53,12 @@ public class BaseFilterMenu<T> extends LinearLayout {
         return null;
     }
 
+    /**
+     * 获取该菜单用到的数据集
+     *
+     * @return
+     */
+    public List<T> getData() {
+        return adapter.getData();
+    }
 }

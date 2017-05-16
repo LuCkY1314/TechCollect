@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.anjuke.android.commonutils.UIUtils;
 import com.example.siqingchan.trytime.R;
+import com.example.siqingchan.trytime.filter.listener.OnFilterSelectedListener;
 import com.example.siqingchan.trytime.filter.listener.OnFilterTitleClick;
 
 import java.util.List;
@@ -21,7 +22,7 @@ import java.util.List;
  * Created by siqingchan on 2017/5/8.
  */
 
-public class FilterFragment extends Fragment implements View.OnClickListener {
+public class FilterFragment extends Fragment implements View.OnClickListener{
     private LinearLayout filterTitleHolder;
     private OnFilterTitleClick listener;
     /**

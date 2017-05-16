@@ -8,9 +8,14 @@ import android.widget.Toast;
 import com.example.siqingchan.trytime.R;
 import com.example.siqingchan.trytime.filter.adapter.AbsExtendFilterAdapter;
 import com.example.siqingchan.trytime.filter.data.DistrictData;
+import com.example.siqingchan.trytime.filter.listener.OnFilterSelectedListener;
+import com.example.siqingchan.trytime.filter.utils.PreferenceUtil;
+
+import java.util.List;
 
 /**
  * Created by siqingchan on 2017/5/10.
+ * 区域筛选菜单下拉窗
  */
 
 public class DistrictFilterMenu extends BaseFilterMenu<DistrictData.DistrictsBean> {
@@ -30,6 +35,9 @@ public class DistrictFilterMenu extends BaseFilterMenu<DistrictData.DistrictsBea
                 String name = "";
                 for (DistrictData.DistrictsBean value : adapter.getData()) {
                     name = name + value.getName();
+                }
+                if (getListener() != null) {
+                    getListener().onSelectCompleted();
                 }
                 Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
             }

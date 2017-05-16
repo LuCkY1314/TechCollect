@@ -8,3 +8,5 @@
 /captures
 .externalNativeBuild
 /commonutils
+/framework/src/main/java/com/example/framework/http/lib/
+/app/src/main/java/com/example/siqingchan/trytime/http/util/
