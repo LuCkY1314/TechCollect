@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="WordWrapView">
+        <attr name="vertical_margin" format="dimension" />
+        <attr name="horizontal_margin" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="TextViewDealNull">
+        <attr name="defaultString" format="reference|string" />
+    </declare-styleable>
+</resources>

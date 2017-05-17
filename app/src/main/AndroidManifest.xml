@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.siqingchan.trytime">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.siqingchan.trytime.filter.activity.MainActivity">
+        <activity android:name=".filter.activity.MainActivity"></activity>
+        <activity android:name=".details.activity.DetailsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -26,4 +26,8 @@ public class Urls {
     }
 
     public String loginCompany = getHost() + "/user/login";
+    /**
+     * 公司租房客源详情
+     */
+    public String getCompanyRentHouseCustomerDetails = getHost() + "/rentCustomer/details";
 }

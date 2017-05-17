@@ -1,6 +1,5 @@
 package com.example.siqingchan.trytime.http.util;
 
-import com.google.gson.FieldAttributes;
 
 /**
  * Created by Lennon on 2016/6/17.

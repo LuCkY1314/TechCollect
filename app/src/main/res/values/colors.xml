@@ -28,4 +28,7 @@
     <color name="jkjDOColor">#DC5800</color>
     <!--报错颜色-->
     <color name="jkjRDColor">#FE3824</color>
+    <color name="jkjF1Color">#F1F1F1</color>
+    <color name="fix_label_color">#FDF1E0</color>
+    <color name="label_text_color">#F3A841</color>
 </resources>

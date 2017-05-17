@@ -3,6 +3,7 @@ package com.example.siqingchan.trytime.http.request;
 import android.text.TextUtils;
 
 import com.example.framework.http.callback.BaseCallback;
+import com.example.siqingchan.trytime.details.result.CompanyRentHouseCustomerDetailsResult;
 import com.example.siqingchan.trytime.http.result.ThirdLoginUserResult;
 import com.example.siqingchan.trytime.http.util.ApiUtil;
 
@@ -34,5 +35,26 @@ public class ApiRequest {
             map.put("code", code);
         }
         Request.doPost(ThirdLoginUserResult.class, Urls.getInstance().loginCompany, map, requestCallback);
+    }
+    /**
+     * 获取租房客源详情
+     *
+     * @param accountId
+     * @param cityId
+     * @param companyId
+     * @param departmentId
+     * @param roleId
+     * @param customerId
+     * @param callback
+     */
+    public static void getRentHouseCustomerDetailsData(long accountId, int cityId, int companyId, int departmentId, long roleId, String customerId, RequestCallback<CompanyRentHouseCustomerDetailsResult> callback) {
+        Map<String, Object> params = ApiUtil.getQueryParams();
+        params.put("account_id", accountId);
+        params.put("city_id", cityId);
+        params.put("customer_id", customerId);
+        params.put("company_id", companyId);
+        params.put("department_id", departmentId);
+        params.put("role_id", roleId);
+        Request.doGet(CompanyRentHouseCustomerDetailsResult.class, Urls.getInstance().getCompanyRentHouseCustomerDetails, params, callback);
     }
 }
