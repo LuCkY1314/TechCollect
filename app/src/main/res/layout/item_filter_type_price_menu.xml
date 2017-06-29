@@ -5,7 +5,7 @@
 
         <variable
             name="item"
-            type="com.example.siqingchan.trytime.filter.data.PriceData.NormalBean"></variable>
+            type="com.example.siqingchan.techcollect.filter.data.PriceData.NormalBean"></variable>
     </data>
 
     <RelativeLayout

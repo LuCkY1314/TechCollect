@@ -5,7 +5,7 @@
 
         <variable
             name="item"
-            type="com.example.siqingchan.trytime.filter.data.HouseTypeData.NormalBean"></variable>
+            type="com.example.siqingchan.techcollect.filter.data.HouseTypeData.NormalBean"></variable>
     </data>
 
     <LinearLayout

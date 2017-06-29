@@ -6,11 +6,11 @@
 
         <variable
             name="presenter"
-            type="com.example.siqingchan.trytime.details.listener.Presenter"></variable>
+            type="com.example.siqingchan.techcollect.details.listener.Presenter"></variable>
 
         <variable
             name="details"
-            type="com.example.siqingchan.trytime.details.data.CompanyRentHouseCustomerDetailsData"></variable>
+            type="com.example.siqingchan.techcollect.details.data.CompanyRentHouseCustomerDetailsData"></variable>
     </data>
 
     <RelativeLayout
@@ -247,7 +247,7 @@
                     android:layout_height="@dimen/line_0.5"
                     android:background="@color/jkjH6GYColor" />
 
-                <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                     android:id="@+id/want_block_tv"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -285,7 +285,7 @@
                     android:layout_height="@dimen/line_0.5"
                     android:background="@color/jkjH6GYColor" />
 
-                <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                     android:id="@+id/want_community_tv"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -329,7 +329,7 @@
                     android:background="@color/jkjWHColor"
                     android:paddingLeft="8dp">
 
-                    <com.example.siqingchan.trytime.details.view.WordWrapView
+                    <com.example.siqingchan.techcollect.details.view.WordWrapView
                         android:id="@+id/label"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -352,7 +352,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/want_floor_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -372,7 +372,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/orientation_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -393,7 +393,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/decorate_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -414,7 +414,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="78dp"
@@ -433,7 +433,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="104dp"
@@ -452,7 +452,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="130dp"
@@ -471,7 +471,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/unlike_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -491,7 +491,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/like_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -546,7 +546,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/customer_id_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -565,7 +565,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/customer_from_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -586,7 +586,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/register_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -606,7 +606,7 @@
                         android:textColor="@color/jkjH3GYColor"
                         android:textSize="@dimen/font_size_14" />
 
-                    <com.example.siqingchan.trytime.details.view.TextViewDealNull
+                    <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                         android:id="@+id/note_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -705,7 +705,7 @@
                 android:layout_marginLeft="12dp"
                 android:background="@drawable/pic_login_tx" />
 
-            <com.example.siqingchan.trytime.details.view.TextViewDealNull
+            <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                 android:id="@+id/owner_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -716,7 +716,7 @@
                 android:textSize="@dimen/font_size_14"
                 app:defaultString="暂无业主信息" />
 
-            <com.example.siqingchan.trytime.details.view.TextViewDealNull
+            <com.example.siqingchan.techcollect.details.view.TextViewDealNull
                 android:id="@+id/department_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
