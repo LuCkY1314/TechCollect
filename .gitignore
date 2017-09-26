@@ -9,13 +9,13 @@
 .externalNativeBuild
 /commonutils
 /framework/src/main/java/com/example/framework/http/lib/
-/app/src/main/java/com/example/siqingchan/trytime/http/util/ApiRule.java
-/app/src/main/java/com/example/siqingchan/trytime/http/util/ApiUtil.java
 libs/
 src/main/java/com/example/siqingchan/techcollect/details/fragment/
 src/main/java/com/example/siqingchan/techcollect/inputverify/
 src/main/java/com/example/siqingchan/techcollect/other/
 src/main/res/layout/view_marker.xml
 src/main/java/com/example/siqingchan/techcollect/input/view/
-tinkerMultidexKeep.pro
-tinkerpatch.gradle
+
+/app/src/main/java/com/example/siqingchan/techcollect/retrofit/sample/utils/
+/app/src/main/java/com/example/siqingchan/techcollect/http/util/ApiRule.java
+/app/src/main/java/com/example/siqingchan/techcollect/http/util/ApiUtil.java
