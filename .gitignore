@@ -16,3 +16,6 @@ src/main/java/com/example/siqingchan/techcollect/details/fragment/
 src/main/java/com/example/siqingchan/techcollect/inputverify/
 src/main/java/com/example/siqingchan/techcollect/other/
 src/main/res/layout/view_marker.xml
+src/main/java/com/example/siqingchan/techcollect/input/view/
+tinkerMultidexKeep.pro
+tinkerpatch.gradle
